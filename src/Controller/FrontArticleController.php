@@ -18,4 +18,3 @@ class FrontArticleController extends AbstractController
         return $this->render('article/show.html.twig');
     }
 }
-

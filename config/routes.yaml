@@ -15,11 +15,11 @@ app_create:
     controller: App\Controller\BackController::create
 
 app_edit:
-    path: /articles/edit
+    path: /articles/{slug}/edit
     controller: App\Controller\BackController::edit
 
 app_delete:
-    path: /articles/delete
+    path: /articles/{slug}/delete
     controller: App\Controller\BackController::delete
 
 app_about:
