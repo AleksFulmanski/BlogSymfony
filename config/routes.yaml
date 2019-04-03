@@ -1,3 +1,36 @@
 app_list:
     path: /
     controller: App\Controller\FrontArticleController::list
+
+app_show:
+    path: /article/{slug}
+    controller: App\Controller\FrontArticleController::show
+
+app_articles:
+    path: /articles/articles
+    controller: App\Controller\BackController::articles
+
+app_create:
+    path: /articles/create
+    controller: App\Controller\BackController::create
+
+app_edit:
+    path: /articles/edit
+    controller: App\Controller\BackController::edit
+
+app_delete:
+    path: /articles/delete
+    controller: App\Controller\BackController::delete
+
+app_about:
+    path: /about
+    controller: App\Controller\HomeController::about
+
+app_contact:
+    path: /contact
+    controller: App\Controller\HomeController::contact
+
+app_blog:
+    path: /blog
+    controller: App\Controller\HomeController::blog
+

@@ -10,6 +10,12 @@ class FrontArticleController extends AbstractController
 {
     public function list(): Response
     {
-        return $this->render('list.html.twig');
+        return $this->render('index.html.twig');
+    }
+
+    public function show():Response
+    {
+        return $this->render('article/show.html.twig');
     }
 }
+
