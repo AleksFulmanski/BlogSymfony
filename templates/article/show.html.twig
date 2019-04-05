@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
-    <h1>Un article très instructif!</h1>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
 
 {% endblock %}
 

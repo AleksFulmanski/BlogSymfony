@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -10,11 +11,35 @@ class FrontArticleController extends AbstractController
 {
     public function list(): Response
     {
-        return $this->render('index.html.twig');
+        // Récupération du Repository
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
+
+        // Récupération de tous les articles
+        $articles = $repository->findAll();
+
+        // Renvoi des articles à la vue
+        return $this->render('index.html.twig', [
+            'articles' => $articles
+        ]);
     }
 
-    public function show():Response
+    /**
+     * @param string $slug
+     * @return Response
+     */
+    public function show(string $slug):Response
     {
-        return $this->render('article/show.html.twig');
+        // Récupération du Repository
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
+
+        // Récupération de tous les articles
+        $article = $repository->findOneBy(['slug' => $slug]);
+
+        // Renvoi des articles à la vue
+
+        return $this->render('article/show.html.twig', ['article' => $article
+        ]);
     }
 }

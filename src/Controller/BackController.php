@@ -15,7 +15,6 @@ class BackController extends AbstractController
 
     public function create(): Response
     {
-
         //ajout message flash
         $this->addFlash('success', 'Votre article a été ajouté');
         return $this->render('back-office/articles/create.html.twig');

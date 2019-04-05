@@ -1,6 +1,23 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}
+    <title>Le blog super cool!</title>
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/homepage.css">
+{% endblock %}
+
+
 {% block body %}
     <h1>Welcome to the most awesome blog ever!</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.title }}</li>
+            <a href="{{ path('app_show', {slug: article.slug}) }}" class="btn badge-success">Détails</a>
+        {% endfor %}
+    </ul>
 {% endblock %}
 
 
